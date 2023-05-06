@@ -35,7 +35,7 @@ async function onClickButtonToLoad() {
     const data = await getGallery(form.searchQuery.value, currentPage);
     listGallery.insertAdjacentHTML('beforeend', createMarkup(data.hits));
 
-   
+    
     const { height: cardHeight } = document
       .querySelector('.gallery')
       .firstElementChild.getBoundingClientRect();
@@ -102,7 +102,6 @@ async function getGallery(q, page = 1) {
     image_type: 'photo',
   });
 
- 
 
   try {
     const response = await axios.get(`${BASE_URL}?key=${API_KEY}&${params}`);
